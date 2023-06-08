@@ -78,6 +78,39 @@
         .button:hover {
             background-color: dodgerblue;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
   </style>
 </head>
 <body>
@@ -94,7 +127,7 @@
     <h1>Welcome to the Dashboard!</h1>
     <p>This is the main content area of the dashboard.</p>
   </div>
-  <a href="#" class="button">ADD DEVICE</a>
+  <a href="#" class="button" onclick="openModal()">ADD DEVICE</a>
   <table>
         <tr>
             <th>ID</th>
@@ -117,5 +150,17 @@
         <!-- Add more rows as needed -->
     </table>
 
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add Device</h2>
+            <!-- Add your form or content here for adding a device -->
+        </div>
+    </div>
+
+
+
+<script src="js/script.js"></script>
 </body>
 </html>
